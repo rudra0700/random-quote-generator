@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random quote generator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="card bg-base-100 w-96 shadow-xl mx-auto top-[200px]">
+      <div class="card-body">
+        <p id="quote-para">if something is important, you do it somehow</p>
+        <h2 class="card-title" id="author">unknown</h2>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary" id="quote-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const quotes = [
+        {
+          quote:
+            "The only limit to our realization of tomorrow is our doubts of today.",
+          author: "Franklin D. Roosevelt",
+        },
+        {
+          quote: "In the middle of difficulty lies opportunity.",
+          author: "Albert Einstein",
+        },
+        {
+          quote:
+            "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+          author: "Winston Churchill",
+        },
+        {
+          quote: "The best way to predict the future is to invent it.",
+          author: "Alan Kay",
+        },
+        {
+          quote: "Do not watch the clock. Do what it does. Keep going.",
+          author: "Sam Levenson",
+        },
+        {
+          quote:
+            "It does not matter how slowly you go as long as you do not stop.",
+          author: "Confucius",
+        },
+        {
+          quote: "If you want to achieve greatness stop asking for permission.",
+          author: "Anonymous",
+        },
+        {
+          quote: "You miss 100% of the shots you don’t take.",
+          author: "Wayne Gretzky",
+        },
+        {
+          quote: "The journey of a thousand miles begins with one step.",
+          author: "Lao Tzu",
+        },
+        { quote: "Dream big and dare to fail.", author: "Norman Vaughan" },
+      ];
+
+      document.getElementById("quote-btn").addEventListener("click", () => {
+        const p = document.getElementById("quote-para");
+        const h2 = document.getElementById("author");
+
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        p.innerText = quotes[randomIndex].quote;
+        h2.innerText = quotes[randomIndex].author;
+      });
+    </script>
+  </body>
+</html>
